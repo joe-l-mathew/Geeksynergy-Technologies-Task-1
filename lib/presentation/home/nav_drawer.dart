@@ -4,6 +4,8 @@ import 'package:geeksynergy_technologies/presentation/info/info_screen.dart';
 import '../login/login_screen.dart';
 
 class NavDrawer extends StatelessWidget {
+  const NavDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -11,21 +13,21 @@ class NavDrawer extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
+            const DrawerHeader(
               child: Text("Drawer"),
             ),
             ListTile(
-              leading: Icon(Icons.info_rounded),
-              title: Text('Company Info'),
+              leading: const Icon(Icons.info_rounded),
+              title: const Text('Company Info'),
               onTap: () => {
                 Navigator.pop(context),
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (builder) => InfoScreen()))
+                    MaterialPageRoute(builder: (builder) => const InfoScreen()))
               },
             ),
             ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Logout'),
+              leading: const Icon(Icons.logout),
+              title: const Text('Logout'),
               onTap: () => {
                 Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(

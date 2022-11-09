@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:geeksynergy_technologies/api/api_method.dart';
 import 'package:geeksynergy_technologies/db/user_model.dart';
 import 'package:geeksynergy_technologies/db_functions/db_functions.dart';
 import 'package:geeksynergy_technologies/functions/show_snackbar.dart';
@@ -9,7 +8,6 @@ import 'package:geeksynergy_technologies/presentation/widgets/default_form_field
 import 'package:geeksynergy_technologies/presentation/widgets/main_button_widget.dart';
 import 'package:geeksynergy_technologies/presentation/widgets/main_title_widget.dart';
 import 'package:geeksynergy_technologies/utils/constants.dart';
-import 'package:http/http.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -51,9 +49,10 @@ class LoginScreen extends StatelessWidget {
 
                       if (myUser != null) {
                         //prompt to login here
+                        // ignore: use_build_context_synchronously
                         Navigator.of(context).pushAndRemoveUntil(
                             MaterialPageRoute(
-                                builder: (builder) => HomeScreen()),
+                                builder: (builder) => const HomeScreen()),
                             (route) => false);
                       } else {
                         showSnackbar(
@@ -71,7 +70,7 @@ class LoginScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).pushAndRemoveUntil(
                           MaterialPageRoute(
-                              builder: (builder) => SignupScreen()),
+                              builder: (builder) => const SignupScreen()),
                           (route) => false);
                     },
                     child: const Text("Create an account")),

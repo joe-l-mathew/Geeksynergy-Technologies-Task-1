@@ -2,10 +2,12 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:geeksynergy_technologies/api/models/response_model.dart';
 import 'package:geeksynergy_technologies/api/models/result_model.dart';
+import 'package:geeksynergy_technologies/provider/response_provider.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 class ApiMethods {
-  Future<List<ResultModel>> sentData(BuildContext context) async {
+  Future<void> sentData(BuildContext context) async {
     //post and reciving response
     var res = await http.post(Uri.parse('https://hoblist.com/api/movieList'),
         headers: <String, String>{
@@ -26,6 +28,8 @@ class ApiMethods {
       movieResultList.add(ResultModel.fromMap(i));
     }
     //returning list with result model
-    return movieResultList;
+    // ignore: use_build_context_synchronously
+    await Provider.of<ResponseProvider>(context, listen: false)
+        .setResult(movieResultList);
   }
 }

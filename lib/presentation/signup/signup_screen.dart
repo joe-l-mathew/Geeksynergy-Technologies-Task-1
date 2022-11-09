@@ -10,7 +10,7 @@ import '../widgets/default_form_field.dart';
 import '../widgets/main_button_widget.dart';
 
 class SignupScreen extends StatefulWidget {
-  SignupScreen({Key? key}) : super(key: key);
+  const SignupScreen({Key? key}) : super(key: key);
 
   @override
   State<SignupScreen> createState() => _SignupScreenState();
