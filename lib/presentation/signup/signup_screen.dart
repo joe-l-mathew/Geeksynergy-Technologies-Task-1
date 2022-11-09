@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geeksynergy_technologies/db/user_model.dart';
-import 'package:geeksynergy_technologies/db_functions/db_functions.dart';
+import 'package:geeksynergy_technologies/db/db_functions/db_functions.dart';
 import 'package:geeksynergy_technologies/functions/show_snackbar.dart';
 import 'package:geeksynergy_technologies/presentation/login/login_screen.dart';
 import 'package:geeksynergy_technologies/presentation/widgets/main_title_widget.dart';

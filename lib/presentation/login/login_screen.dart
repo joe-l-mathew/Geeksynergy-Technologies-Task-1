@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geeksynergy_technologies/db/user_model.dart';
-import 'package:geeksynergy_technologies/db_functions/db_functions.dart';
+import 'package:geeksynergy_technologies/db/db_functions/db_functions.dart';
 import 'package:geeksynergy_technologies/functions/show_snackbar.dart';
 import 'package:geeksynergy_technologies/presentation/home/home_screen.dart';
 import 'package:geeksynergy_technologies/presentation/signup/signup_screen.dart';
@@ -55,15 +55,18 @@ class LoginScreen extends StatelessWidget {
                                 builder: (builder) => const HomeScreen()),
                             (route) => false);
                       } else {
+                        //if name or password not found in DB
                         showSnackbar(
                             message: "Invalid Name or Password",
                             context: context);
                       }
                     } else {
+                      //if some fields are missing
                       showSnackbar(
                           message: "Please fill all fields", context: context);
                     }
                   }),
+              //signup page nav
               Align(
                 alignment: Alignment.bottomRight,
                 child: TextButton(
@@ -79,19 +82,6 @@ class LoginScreen extends StatelessWidget {
           ),
         ),
       ),
-      // floatingActionButton: FloatingActionButton(onPressed: () async {
-      //   Response res = await ApiMethods().sentData(
-      //       MovieModel("Hello", "language", "jdjdj", "sort", "movieName",
-      //           "director", "staring", 10, 0),
-      //       context);
-      //   print(MovieModel("Hello", "language", "jdjdj", "sort", "movieName",
-      //           "director", "staring", 10, 0)
-      //       .toJson());
-      //   var a = ResponseModel.fromJson(res.body);
-      //   print(a.queryParam!.category);
-
-      //   print(res.body);
-      // }),
     );
   }
 }

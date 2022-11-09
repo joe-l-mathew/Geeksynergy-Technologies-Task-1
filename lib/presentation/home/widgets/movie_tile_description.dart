@@ -53,9 +53,7 @@ class MovieTileDiscription extends StatelessWidget {
               TextButton(
                   onPressed: () {},
                   child: Text("Voted by ${currentModel.totalVoted} People")),
-              // TextButton(
-              //     onPressed: () {},
-              //     child: Text("Views"))
+            
               const Spacer()
             ],
           )
