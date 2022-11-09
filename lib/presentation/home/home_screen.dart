@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:geeksynergy_technologies/api/api_method.dart';
-import 'package:geeksynergy_technologies/api/response/response.dart';
-import 'package:geeksynergy_technologies/api/response/result_model.dart';
-import 'package:geeksynergy_technologies/presentation/home/result_screen.dart';
-import 'package:geeksynergy_technologies/presentation/widgets/default_form_field.dart';
+import 'package:geeksynergy_technologies/api/models/result_model.dart';
+
 import 'package:geeksynergy_technologies/provider/response_provider.dart';
 import 'package:geeksynergy_technologies/utils/constants.dart';
-import 'package:http/http.dart';
 import 'package:provider/provider.dart';
 
-import '../../api/movie_model.dart';
 import 'nav.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -39,8 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       resList = await ApiMethods().sentData(
-          MovieModel("Movie", "Kannada", "All", "Vote", "movieName", "director",
-              "staring", 10, 0),
+          
           context);
       Provider.of<ResponseProvider>(context, listen: false).isLoadingFun(false);
     });

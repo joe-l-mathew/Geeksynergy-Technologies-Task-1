@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:geeksynergy_technologies/api/api_method.dart';
-import 'package:geeksynergy_technologies/api/movie_model.dart';
 import 'package:geeksynergy_technologies/db/user_model.dart';
 import 'package:geeksynergy_technologies/db_functions/db_functions.dart';
 import 'package:geeksynergy_technologies/functions/show_snackbar.dart';
@@ -9,7 +8,6 @@ import 'package:geeksynergy_technologies/presentation/signup/signup_screen.dart'
 import 'package:geeksynergy_technologies/presentation/widgets/default_form_field.dart';
 import 'package:geeksynergy_technologies/presentation/widgets/main_button_widget.dart';
 import 'package:geeksynergy_technologies/presentation/widgets/main_title_widget.dart';
-import 'package:geeksynergy_technologies/api/response/response.dart';
 import 'package:geeksynergy_technologies/utils/constants.dart';
 import 'package:http/http.dart';
 
